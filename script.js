@@ -7,13 +7,17 @@ const LowerLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 
 let charSet = []
 let generatedPassword = []
+
 //problems: only displaying 72 so the user input isnt working or linked to something. password length not showing up in console log. password not generating in box
 
 
 var generateBtn = document.querySelector("#generate");
 
+function passwordLength(){
+8 < i <128
+}
 //TODO: click button to generate passward. 
-function writePassword() {
+function generatePassword(){
     charSet =[];
 //1. propmt user
 
@@ -40,16 +44,15 @@ let lowerLetter = confirm('Do you want lowercase letters in your passward?');
     if (lowerLetter) {
     charSet.push.apply(charSet, LowerLetter);
     console.log("lowerletters applied");
-    return "password goes here"
+
+    return "not sure how to link this";   
 }
 }
     console.log(charSet)
-
-    
 }
 }}}}
 // Write password to the #password input
-function generatePassword() {
+ function writePassword() {
     var password = generatePassword();
 var passwordText = document.querySelector("#password");
 
@@ -58,10 +61,10 @@ passwordText.value = password;
         var index = Math.floor(Math.random() * charSet.passwordLength)
         generatedPassword[i] = charSet[index]
     }
-
-    
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-    
+generateBtn.addEventListener("click", writePassword) 
+    const length = passwordLength.apply(passwordLength, Number, SpecCharater, UpperLetters, LowerLetter)
+
+ 
