@@ -1,7 +1,7 @@
 # Passwork-generator
+Decription 
 
-fuck this shit idk why it wont connect if i have done everything the same
-nvm we good 
+
 
 ```
 GIVEN I need a new, secure password

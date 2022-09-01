@@ -1,78 +1,113 @@
 // Assignment Code
 //TODO: include lowercase, uppercase, numeric, and special charaters
-const Number = ['1','2','3','4','5','6','7','8','9','0']
-const SpecCharater = ['%','!','#','$','&','+','!','?', '(', ')']
-const UpperLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-const LowerLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+const number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+const specCharater = ['%', '!', '#', '$', '&', '+', '!', '?', '(', ')']
+const upperLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+const lowerLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 let charSet = []
 let generatedPassword = []
-
-//problems: only displaying 72 so the user input isnt working or linked to something. password length not showing up in console log. password not generating in box
-
 
 var generateBtn = document.querySelector("#generate");
 
 
 //TODO: click button to generate passward. 
-function generatePassword(){
-    charSet =[];
-//1. propmt user
+function generatePasswordOptions() {
 
-var passwordLength = prompt('How long do you want your passward? Choose between 8 and 128 charaters'); {
-    if (passwordLength <= 8 || passwordLength >= 128) {
+    var passwordLength = prompt('How long do you want your passward? Choose between 8 and 128 charaters');
+    if (passwordLength < 8 || passwordLength > 128) {
         window.alert("Invalid entry, please try again");
-    } else { 
-var number = confirm('Do you want numbers in your passward?'); {
+        return null;
+    } else {
+        var number = confirm('Do you want numbers in your passward?');
         if (number) {
-            charSet.push.apply(charSet, Number);
-            //const random = Math.floor(Math.random() * Number.length)
+
             console.log("Number applied");
-            //return number;
-        } 
-var specCharater = confirm('Do you want special charaters?'); {
-    if (specCharater) {
-        charSet.push.apply(charSet, SpecCharater);
-        console.log("specCharater applied");
-        //return specCharater;
-    }
-var upperLetters = confirm('Do you want uppercase letters in your passward?');
-    if (upperLetters) {
-    charSet.push.apply(charSet, UpperLetters);
-    console.log("upperletters applied");
-    //return upperLetters;
-    }
-var lowerLetter = confirm('Do you want lowercase letters in your passward?');
-    if (lowerLetter) {
-    charSet.push.apply(charSet, LowerLetter);
-    console.log("lowerletters applied");
-    //return lowerLetter
+
+        }
+        var specCharater = confirm('Do you want special charaters?');
+        if (specCharater) {
+            console.log("specCharater applied");
+
+        }
+        var upperLetters = confirm('Do you want uppercase letters in your passward?');
+        if (upperLetters) {
+            console.log("upperletters applied");
+
+        }
+        var lowerLetter = confirm('Do you want lowercase letters in your passward?');
+        if (lowerLetter) {
+
+            console.log("lowerletters applied");
+
+        }
+        var passwordOptions = {
+            passwordLength, number, specCharater, upperLetters, lowerLetter
+
+
+        }
+    } return passwordOptions;
 }
-}
-function index(passwordLength, number, specCharater, upperLetters, lowerLetter) {
-    return index;
+
+function generatePassword() {
+    var options = generatePasswordOptions();
+    var charSet = [];
+    var password = [];
+
+    if (options.number === true) {
+
+        for (let i = 0; i < options.passwordLength; i++) {
+            var index = Math.floor(Math.random() * number.length);
+            var char = number[index];
+            charSet.push(char)
+        }
+    }
+    if (options.specCharater === true) {
+
+        for (let i = 0; i < options.passwordLength; i++) {
+            var index = Math.floor(Math.random() * specCharater.length);
+            var char = specCharater[index];
+            charSet.push(char)
+        }
+    }
+    if (options.upperLetters === true) {
+
+        for (let i = 0; i < options.passwordLength; i++) {
+            var index = Math.floor(Math.random() * upperLetters.length);
+            var char = upperLetters[index];
+            charSet.push(char)
+        }
+    }
+    if (options.lowerLetter === true) {
+
+        for (let i = 0; i < options.passwordLength; i++) {
+            var index = Math.floor(Math.random() * lowerLetter.length);
+            var char = lowerLetter[index];
+            charSet.push(char)
+        }
+    }
+
+
+    for (let i = 0; i < options.passwordLength; i++) {
+        var index = Math.floor(Math.random() * charSet.length);
+        var char = charSet[index];
+        password.push(char)
+    }
+
+    return password.join("");
 
 }
-    console.log(charSet)
-   
-}
-}}}
+
 
 // Write password to the #password input
- function writePassword() {
+function writePassword() {
     var password = generatePassword();
-var passwordText = document.querySelector("#password");
+    var passwordText = document.querySelector("#password");
 
-//need help right here 
-passwordText.value = password;
-    for (let i = 0; i < index; i++) {
-        var index = Math.floor(Math.random() * charSet.passwordLength)
-        generatedPassword[i] = index
-    }
+    passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword) 
-    //const length = passwordLength.apply(passwordLength, Number, SpecCharater, UpperLetters, LowerLetter)
+generateBtn.addEventListener("click", writePassword)
 
- 
+
