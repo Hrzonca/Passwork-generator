@@ -1,21 +1,21 @@
-# Passwork-generator
+#Passward I Won't Remember Unless I Write It Down 
+
 Decription 
+The motivation for this site is to give the user the ability to generate usable password with the criteria they selected. This project allowed me to apply the Javascript information from last week's class into a functioning website. 
 
+I learned a lot while struggling through this. the functions that were used heped me think in a more logical way for building the site. i expanded my knowledge of arrays and understanding that within a function you can create another array to push the user options to inorder for that information to be translated into a password. by using for loops i am able to randomize the global arrays and use them in local arrays. 
 
+Repository link
+https://github.com/Hrzonca/Passwork-generator
+![My images](./assets/images/repositorypage.png)
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+Live page link 
+https://hrzonca.github.io/Passwork-generator/
+![My images](./assets/images/livesite.png)
+
+Credits
+Triology Education Services
+Univeristy of Washington Full Stack Bootcamp
+
+License
+MIT license 

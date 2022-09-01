@@ -1,5 +1,5 @@
 // Assignment Code
-//TODO: include lowercase, uppercase, numeric, and special charaters
+//arrays that will be used
 const number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 const specCharater = ['%', '!', '#', '$', '&', '+', '!', '?', '(', ')']
 const upperLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -11,7 +11,7 @@ let generatedPassword = []
 var generateBtn = document.querySelector("#generate");
 
 
-//TODO: click button to generate passward. 
+//promting the user which options they would like to use. 
 function generatePasswordOptions() {
 
     var passwordLength = prompt('How long do you want your passward? Choose between 8 and 128 charaters');
@@ -49,6 +49,7 @@ function generatePasswordOptions() {
     } return passwordOptions;
 }
 
+//generating password based on if they answered true. allows the true statements to be stored in the charset array and pushed all the arrays into the passward array to be used in the password. 
 function generatePassword() {
     var options = generatePasswordOptions();
     var charSet = [];
